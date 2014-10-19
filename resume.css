@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+.page {
+    height: 100vh;
+}
+
+.header {
+	height : 5vh;
+	position: fixed;
+}
+
+.container {
+	top : 5vh;
+	height: 95vh;
+}
