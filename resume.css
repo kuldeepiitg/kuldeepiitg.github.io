@@ -5,15 +5,23 @@ body {
 }
 
 .page {
-    height: 100vh;
+    
+}
+
+.oddPage {
+	background-color: #DAD5D5;
+}
+
+.evenPage {
+	background-color: #EAE5E5;
 }
 
 .header {
-	height : 5vh;
-	position: fixed;
-}
-
-.container {
-	top : 5vh;
-	height: 95vh;
+	background-color: #E83556;
+	min-height: 50px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
 }
