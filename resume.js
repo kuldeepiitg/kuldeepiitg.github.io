@@ -3,19 +3,24 @@ function greet() {
 	return "hello github";
 	}
 	
-function pagedown() {
-	var height = $(window).height();
+
+function pageUpDown(down) {
+	var pageHeight = $(".page").height();
+	var verticalScrollPosition = $(document).scrollTop();
 	
-	height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-	console.log(height);
-	var scrollTop = $(document).scrollTop();
-	console.log(scrollTop);
-	
-	$(document).scrollTop(scrollTop + height);
+	if (down = 1) {
+		$(document).scrollTop(verticalScrollPosition + pageHeight);
+	} else {
+		$(document).scrollTop(verticalScrollPosition - pageHeight);
+	}
 }
 
 $(window).keydown(function(event) {
 	if (event.which == 40) {
-		pagedown();
+		event.preventDefault();
+		pageUpDown(1);
+	} else if (event.which = 38) {
+		event.preventDefault();
+		pageUpDown(0);
 	}
 });
