@@ -1,27 +1,29 @@
 
 /**
- * Page up or down.
- * 
- * @param down if 1 then take page down, else if -1 then up.
+ * Page Down.
  */
-function pageUpDown(down) {
-	var pageHeight = $(".page").height();
+function pageDown() {
+	var pageHeight = $(".page").innerHeight();
 	var verticalScrollPosition = $(document).scrollTop();
-	
-	if (down == 1) {
-		var shift = pageHeight - verticalScrollPosition % pageHeight;
-		$('html, body').animate({
-		    scrollTop : verticalScrollPosition + shift
-		 }, 500);
-	} else if (down == -1){
-		var shift = verticalScrollPosition % pageHeight;
-		if (shift == 0) {
-			shift = pageHeight;
-		}
-		$('html, body').animate({
-		    scrollTop : verticalScrollPosition - shift
-		 }, 500);
+	var shift = pageHeight - verticalScrollPosition % pageHeight;
+	$('html, body').animate({
+	    scrollTop : verticalScrollPosition + shift
+	 }, 500);
+}
+
+/**
+ * Page Up.
+ */
+function pageUp() {
+	var pageHeight = $(".page").innerHeight();
+	var verticalScrollPosition = $(document).scrollTop();
+	var shift = verticalScrollPosition % pageHeight;
+	if (shift == 0) {
+		shift = pageHeight;
 	}
+	$('html, body').animate({
+	    scrollTop : verticalScrollPosition - shift
+	}, 500);
 }
 
 /**
@@ -31,13 +33,20 @@ function pageUpDown(down) {
 $(window).keydown(function(event) {
 	if (event.keyCode == 40) {
 		event.preventDefault();
-		pageUpDown(1);
+		pageDown();
 	} else if (event.keyCode = 38) {
 		event.preventDefault();
-		pageUpDown(-1);
+		pageUp();
 	}
 });
 
-$(".page").height($(window).height()-$(".header").height() + "px");
-$(".page").css('padding-top', $(".header").height() + "px")
+$(window).scroll(function(){
+	event.preventDefault();
+//	pageDown();
+});
+
+$(".page").innerHeight($(window).height()+ "px");
+$(".page").css('padding-top', $(".header").height() + "px");
+$(".oddPage").html("ODD PAGE");
+$(".evenPage").html("Even PAGE");
 
