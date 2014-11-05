@@ -1,4 +1,8 @@
 
+animationTime = 500;
+quitePeriod = 500;
+lastAnimation = 0;
+
 /**
  * Page Down.
  */
@@ -8,7 +12,7 @@ function pageDown() {
 	var shift = pageHeight - verticalScrollPosition % pageHeight;
 	$('html, body').animate({
 	    scrollTop : verticalScrollPosition + shift
-	 }, 500);
+	 }, animationTime);
 }
 
 /**
@@ -23,7 +27,7 @@ function pageUp() {
 	}
 	$('html, body').animate({
 	    scrollTop : verticalScrollPosition - shift
-	}, 500);
+	}, animationTime);
 }
 
 /**
@@ -34,16 +38,32 @@ $(window).keydown(function(event) {
 	if (event.keyCode == 40) {
 		event.preventDefault();
 		pageDown();
-	} else if (event.keyCode = 38) {
+	} else if (event.keyCode == 38) {
 		event.preventDefault();
 		pageUp();
+	} else if (event.keyCode == 32) {
+		event.preventDefault();
 	}
 });
 
-$(window).scroll(function(){
-	event.preventDefault();
-//	pageDown();
+$(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
+    event.preventDefault();
+    var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+    
+    var timeNow = new Date().getTime();
+    if (timeNow - lastAnimation < quitePeriod + animationTime) {
+    	event.preventDefault();
+        return;
+    }
+    
+    if (delta < 0) {
+        pageDown()
+      } else {
+        pageUp()
+      }
+      lastAnimation = timeNow;
 });
+
 
 $(".page").innerHeight($(window).height()+ "px");
 $(".page").css('padding-top', $(".header").height() + "px");
