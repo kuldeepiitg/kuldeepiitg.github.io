@@ -25,3 +25,22 @@ body {
     top: 0px;
     z-index: 100;
 }
+
+.pageSwitch {
+    display: inline-block;
+    margin: 0 auto;
+    width: 24.5%;
+}
+
+.topBarTabsGroup {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.name {
+	display: inline-block;
+    margin: 0 auto;
+    width: 24.5%;
+}
+
+
