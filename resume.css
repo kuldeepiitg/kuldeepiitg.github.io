@@ -34,13 +34,21 @@ body {
 
 .topBarTabsGroup {
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
 }
 
 .name {
 	display: inline-block;
     margin: 0 auto;
     width: 24.5%;
+    font-family: noticiaBold;
 }
+
+@font-face {
+    font-family: noticiaBold;
+    src: url(fonts/noticia-text/NoticiaText-Bold.ttf);
+}
+
+
 
 
