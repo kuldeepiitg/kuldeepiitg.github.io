@@ -29,24 +29,53 @@ body {
 .pageSwitch {
     display: inline-block;
     margin: 0 auto;
-    width: 24.5%;
+    width: 15%;
+}
+
+.pageBody {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+.photo {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(photos/profilepicDownscaled.jpg) no-repeat;
+}
+
+.intro{
+	
 }
 
 .topBarTabsGroup {
     margin: 0 auto;
     width: 70%;
+    font-family: noticiaBold;
 }
 
 .name {
 	display: inline-block;
     margin: 0 auto;
-    width: 24.5%;
-    font-family: noticiaBold;
+    width: 40%;
+    
 }
 
 @font-face {
     font-family: noticiaBold;
     src: url(fonts/noticia-text/NoticiaText-Bold.ttf);
+}
+
+.name h1{
+	margin: inherit;
+}
+.name h6 {
+	margin: inherit;
+	font-size: 1.2em;
 }
 
 
