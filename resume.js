@@ -67,6 +67,10 @@ $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event
 setTimeout(function(){
 	$(".page").innerHeight($(window).height()+ "px");
 	$(".page").css('padding-top', $(".header").height() + "px");
+	
+	
+	
+	
 //	$(".oddPage").html("ODD PAGE");
 //	$(".evenPage").html("Even PAGE");
 },100);

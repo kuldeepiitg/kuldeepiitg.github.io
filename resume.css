@@ -40,18 +40,20 @@ body {
 }
 
 .photo {
-	width: 300px;
-	height: 300px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
+	float: left;
+	width: 400px;
+	height: 400px;
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
 	background: url(https://raw.githubusercontent.com/kuldeepiitg/kuldeepiitg.github.io/master/photos/profilepicDownscaled.jpg) no-repeat;
 }
 
-.intro{
-	
+.intro {
+	width: 50%;
+	float: left;
+	margin-left: 50px;
 }
-
 .topBarTabsGroup {
     margin: 0 auto;
     width: 70%;
@@ -61,8 +63,7 @@ body {
 .name {
 	display: inline-block;
     margin: 0 auto;
-    width: 40%;
-    
+    width: 44%;
 }
 
 @font-face {
